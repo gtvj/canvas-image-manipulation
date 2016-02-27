@@ -1,0 +1,40 @@
+<html>
+<meta charset="utf-8">
+<head>
+	<title>App template</title>
+	<link rel="stylesheet" href="main.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<h1>Image manipulation with canvas</h1>
+	<p>Two identical images are shown on this page. The first is a .jpg file inserted using a standard HTML tag. The second is an HTML5 canvas dynamically created from this image using JavaScript (there is no dependency on jQuery for this).</p>
+	<p>This canvas and its context are properties of a constructed object that provides a simple API for pixel manipulation of the canvas.</p>
+	<p>In the example below:</p>
+	<ul>
+		<li>The object instance is 'triceratops' created by constructing a new Filterable() object passing the constructor an ID for an IMG DOM node on the page. In this case it was created like so: <span class="code">triceratops = new Filterable('triceratops');</span> A word of warning: ensure the image data is fully loaded before attepting to instantiate a Filterable() object.</li>
+		<li>Having instantiated the object, a HTML5 canvas is drawn to the page (this currently simply appends it to the body). </li>
+		<li>The user can than apply a filter to the object using its applyFilter() method, and passing in a string that corresponds to the desired filter. Here are some options:
+		<span class="code">triceratops.applyFilter('invert');</span>
+		<span class="code">triceratops.applyFilter('desaturate');</span>
+		<span class="code">triceratops.applyFilter('eightBit');</span></li>
+		<li>These filters can be applied in sequence, allowing, for example, a desaturated image to be inverted.</li>
+		<li>The user can then revert the canvas to its original state by calling applyFilter() with no arguments passed to it.</li>
+	</ul>
+	<figure>
+		<img src="triceratops.jpg" id="triceratops">
+		<figcaption>Photograph by Matthew Paulson made available under a <a href="http://www.flickr.com/photos/matthewpaulson/7185380311/sizes/m/in/photolist-bWWXer-9ufCce-9Agc2J-aNX6Dx-9w5SFS-f7dArj-asKWr7-98aw1K-ciFoum-8GF25q-bVhXcG-dZQhi2-an4jxz-cjL6F5-cjKJeu-aMXsSR-d2DL5A-8ckzus-8HRgLk-dtBH75-7E4L61-7JM1cn-8F4NYn-7Be85n-eD7hs8-aazopa-9PK479-bp6wyV-7Rb4Yp-a1umjX-avytKJ-aSX25z-aQf21D-bxZeHU-9rJ1Xc-bD1dY3-eCvEm2-a1he5x-adPYWx-96aZjU-bpM7Jj/">Creative Commons license</a></figcaption>
+	</figure>
+
+	<!--[if lt IE 9]>
+	    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<!--<![endif]-->
+	<script src="app.js"></script>
+	<script src="demo.js"></script>
+	<script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>
